@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Sat Feb 08 2014 20:04:04 GMT+0000 (UTC) -->
+<html data-wf-site="52f1a23308d1fc5e180000ab">
+<head>
+  <meta charset="utf-8">
+  <title>CSE 170 Group 2: Flashback - Your brain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/webflow.css">
+
+
+
+<link rel="stylesheet" href="sidetogglemenu.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Blueprint: Slide and Push Menus</title>
+    <meta name="description" content="Blueprint: Slide and Push Menus" />
+    <meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+
+
+
+  <link rel="stylesheet" type="text/css" href="css/cse-170-group-2-flashback.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Montserrat:400,700","Varela Round:400","Varela:400"]
+      }
+    });
+  </script>
+  <script>
+    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+  </script>
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <link rel="apple-touch-icon" href="https://y7v4p6k4.ssl.hwcdn.net/51d2715929d9cfe03a000001/51e07282241660ce78000001_webclip-gallio.png">
+
+<style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .fit {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .center {
+            display: block;
+             position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;        }
+        .display {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;}
+
+
+
+      <style type="text/css">
+/* pushes the page to the full capacity of the viewing area */
+html {height:100%;}
+body {height:100%; margin:0; padding:0;}
+/* prepares the background image to full capacity of the viewing area */
+#bg {position:fixed; top:0; left:0; width:100%; height:100%;}
+/* places the content ontop of the background image */
+#content {position:relative; z-index:1;}
+</style>
+<!--[if IE 6]-->
+<style type="text/css">
+/* some css fixes for IE browsers */
+html {overflow-y:hidden;}
+body {overflow-y:auto;}
+#bg {position:absolute; z-index:-1;}
+#content {position:static;}
+</style>     
+
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        function set_body_height() {
+            var wh = $(window).height();
+            $('body').attr('style', 'height:' + wh + 'px;');
+        }
+        $(document).ready(function () {
+            set_body_height();
+            $(window).bind('resize', function () { set_body_height(); });
+        });
+    </script>
+
+	
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+<link type="text/css" rel="stylesheet" href="stylesheet.css" />
+	
+
+
+
+
+</head>
+
+
+
+<body class="cbp-spmenu-push">
+    <div class="w-nav menubar" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container">
+    <nav class="w-nav-menu navmenu" role="navigation"><a class="w-nav-link homelink" href="home.pl">Home</a><a class="w-nav-link searchlink" href="search.html">Search</a><a class="w-nav-link settingslink" href="your-settings.html">Settings</a>
+    <a
+    class="w-nav-link helplink" href="help-guide.html">Help</a><a class="w-nav-link logoutlink" href="index.html">Log Out</a>
+    </nav>
+    <div class="w-nav-button menubutton">
+    <div class="w-icon-nav-menu iconmenu"></div>
+    </div>
+    </div>
+    </div>
+  [% IF image %]
+    <a href="edit_memory.pl?image_name=[% image.name %]&age_range=[% image.age_range %]"><img class="memory_img_home" src="[% image.url %]" /></a>
+  [% ELSE %]
+      <IMG class="displayed" src="images/babyicon.jpg">
+  [% END %]
+  <div id="bg"><img src="images/frame.jpg" width="100%" height="100%" alt=""></div>
+<!--<img src="images/althome2.png" height="420" width="420">-->
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
+      <h3>Albums</h3>
+      <a href="age-range.pl?age_range=youth">Youth Album</a>
+      <a href="age-range.pl?age_range=20s">20s Album</a>
+      <a href="age-range.pl?age_range=30s">30s Album</a>
+      <a href="age-range.pl?age_range=40s">40s Album</a>
+      <a href="age-range.pl?age_range=50s">50s Album</a>
+      <a href="age-range.pl?age_range=60s">60s Album</a>
+      <a href="age-range.pl?age_range=70s">70s Album</a>
+      <a href="age-range.pl?age_range=80s">80s Album</a>
+      <a href="your-brain.html">Close</a>
+    </nav>
+    
+    <div class="container">
+      <div class="main">
+        <section>
+          <!-- Class "cbp-spmenu-open" gets applied to menu -->
+          <button id="showRight" style="background-color:transparent"><img src="images/albums.png"/></button>
+        </section>
+        <section class="buttonset">
+          <!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
+          <!--<button id="showLeftPush">Show/Hide Left Push Menu</button>-->
+           <a href="add-memory.pl?age_range=[% age_range %]"><button id="showRight" style="background-color:transparent"><img src="images/create.png"/></button></a>
+        </section>
+      </div>
+    </div>
+    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+    <script src="js/classie.js"></script>
+    <script>
+      var menuRight = document.getElementById( 'cbp-spmenu-s1' ),
+        showRight = document.getElementById( 'showRight' ),
+        body = document.body;
+
+      showRight.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( menuRight, 'cbp-spmenu-open' );
+        disableOther( 'showRight' );
+      };
+
+
+      function disableOther( button ) {
+        if( button !== 'showRight' ) {
+          classie.toggle( showRight, 'disabled' );
+        }
+      }
+    </script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+</body>
+</html>

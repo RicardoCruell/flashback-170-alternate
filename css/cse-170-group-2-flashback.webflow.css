@@ -1,3 +1,18 @@
+.pic {
+    
+    float: left;
+    width: 80px;
+    height: 80px;
+    border: thin black ridge;
+
+  
+     
+            -webkit-box-shadow: 3px 3px 3px #777;
+            -moz-box-shadow: 3px 3px 3px #777;
+                 box-shadow: 3px 3px 3px #777;
+    
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
@@ -412,13 +427,8 @@ p {
 }
 
 .memory_img {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 25px;
-}
-
-.memory_img_home {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }

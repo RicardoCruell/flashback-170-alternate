@@ -144,6 +144,7 @@ body {overflow-y:auto;}
     </div>
     </div>
   [% IF image %]
+      <h1 class="memory_home">Do you remember?</h1>
     <a href="edit_memory.pl?image_name=[% image.name %]&age_range=[% image.age_range %]"><img class="memory_img_home" src="[% image.url %]" /></a>
   [% ELSE %]
       <IMG class="displayed" src="images/babyicon.jpg">
